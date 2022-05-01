@@ -1,12 +1,13 @@
 from django.shortcuts import render
+from todo_app.models import TaskList
 
 # Create your views here.
 
 def todolist(request):
-    context = {
-        'welcome_text': 'Welcome to Task Mate',
-        }
-    return render(request, 'todo_app/todo.html', context )
+
+    all_tasks = TaskList.objects.all
+
+    return render(request, 'todo_app/todo.html', {'all_tasks':all_tasks})
 
 
 def about(request):
