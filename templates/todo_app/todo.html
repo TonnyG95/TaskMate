@@ -57,17 +57,17 @@
 
           <tr class="table-success">
           <td>{{ obj.task }}</th>
-          <td>Complete</td>
+            <td><a href="{% url 'pending_task' obj.id %}">Mark Pending</a></td>
           <td>{{ obj.important }}</td>
-          <td>Edit</td>
-          <td>Delete</td>
+          <td><a href="{% url 'edit_task' obj.id %}">Edit</a></td>
+          <td><a href="{% url 'delete_task' obj.id %}">Delete</a></td>
           </tr>
           {% else %}
           <tr>
               <td>{{ obj.task }}</th>
-              <td>Not Completed</td>
+              <td><a href="{% url 'complete_task' obj.id %}">Mark Complate</a></td>
               <td>{{ obj.important }}</td>
-              <td><a class="btn btn-primary" href="#">Edit</a></td>
+              <td><a class="btn btn-primary" href="{% url 'edit_task' obj.id %}">Edit</a></td>
               <td><a class="btn btn-danger" href="{% url 'delete_task' obj.id %}">Delete</a></td>
           </tr>
           {% endif %}
