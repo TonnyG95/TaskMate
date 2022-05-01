@@ -24,4 +24,7 @@
    "workbench.colorTheme": "Visual Studio Dark",
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "HookyQR.beautify"
+   "emmet.includeLanguages": {
+      "django-html": "html"
+   },
 }
