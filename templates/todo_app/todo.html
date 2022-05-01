@@ -8,6 +8,8 @@
 
 <div class="container">
 
+  <!--Task List-->
+
     <h1 class="text-center m-4 text-muted">Today's tasks</h1>
 
     <table class="table table-bordered">
@@ -51,16 +53,29 @@
 
 <br>
 
-<form>
+<!--Input Form-->
+
+<form method="POST">
+
+  {% csrf_token %}
+
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Add new task</label>
-      <input type="text" class="form-control" placeholder="What needs to be done today?">
+      <input type="text" class="form-control" name="task" placeholder="What needs to be done today?">
     </div>
 
-    <div class="mb-3 form-check">
+    <div class="d-flex flex-row">
+    <div class="mb-3 form-check mx-2">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      <label class="form-check-label " for="exampleCheck1">Done</label>
     </div>
+
+    <div class="mb-3 form-check mx-2">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label  " for="exampleCheck1">Important</label>
+    </div>
+
+  </div>
     <button type="submit" class="btn btn-warning">Add Task</button>
   </form>
 
