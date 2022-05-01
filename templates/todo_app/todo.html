@@ -8,9 +8,31 @@
 
 <div class="container">
 
-  <!--Task List-->
+  <!--Messages-->
+
+ {% if messages %}
+
+  {% for message in messages %}
+
+  <div class="alert alert-info alert-dismissible fade show" role="alert">
+    <strong>Saved!</strong> {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  {% endfor %}
+
+  {% endif %}
+
+  <!--End Messages-->
+
+
+  <!--Task List Heading -->
 
     <h1 class="text-center m-4 text-muted">Today's tasks</h1>
+
+    {% if all_tasks %}
 
     <table class="table table-bordered">
         <thead class="thead-dark"> 
@@ -19,32 +41,50 @@
             <th scope="col">Task Status</th>
             <th scope="col">important</th>
             <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+            <th scope="col"> Delete</th>
           </tr>
         </thead>
+
+
+         <!--Task List -->
     <tbody>
 
-    {% for obj in all_tasks %}
+  
 
-        {% if obj.done %}
+      {% for obj in all_tasks %}
 
-        <tr class="table-success">
-        <td>{{ obj.task }}</th>
-        <td>Complete</td>
-        <td>{{ obj.important }}</td>
-        <td>Edit</td>
-        <td>Delete</td>
-        </tr>
-        {% else %}
-        <tr>
-            <td>{{ obj.task }}</th>
-            <td>Not Completed</td>
-            <td>{{ obj.important }}</td>
-            <td><a class="btn btn-primary" href="#">Edit</a></td>
-            <td><a class="btn btn-danger" href="#">Delete</a></td>
-        </tr>
-        {% endif %}
-    {% endfor %}
+          {% if obj.done %}
+
+          <tr class="table-success">
+          <td>{{ obj.task }}</th>
+          <td>Complete</td>
+          <td>{{ obj.important }}</td>
+          <td>Edit</td>
+          <td>Delete</td>
+          </tr>
+          {% else %}
+          <tr>
+              <td>{{ obj.task }}</th>
+              <td>Not Completed</td>
+              <td>{{ obj.important }}</td>
+              <td><a class="btn btn-primary" href="#">Edit</a></td>
+              <td><a class="btn btn-danger" href="{% url 'delete_task' obj.id %}">Delete</a></td>
+          </tr>
+          {% endif %}
+      {% endfor %}
+    {% else %}
+
+    <div class="container">
+      <div class="card">
+        <h5 class="card-header">No Tasks!</h5>
+        <div class="card-body">
+          <h5 class="card-title">You dont have any task for today</h5>
+          <p class="card-text">Add some</p>
+
+        </div>
+      </div>
+    </div>
+  {% endif %}
   </tbody>
 </table>
     <br>
@@ -52,6 +92,8 @@
 </div>
 
 <br>
+
+<!--End Task List-->
 
 <!--Input Form-->
 
@@ -84,4 +126,3 @@
 <br>
 
 {% endblock content %}
-
