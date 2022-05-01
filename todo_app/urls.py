@@ -4,4 +4,6 @@ from . import views
 
 urlpatterns = [
     path('tasks/', views.todolist, name='todolist'),
+    path('contact/', views.contact, name='contact'),
+    path('about/', views.about, name='about'),
 ]
