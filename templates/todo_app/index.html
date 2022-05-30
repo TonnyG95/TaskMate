@@ -13,9 +13,20 @@
 
     <img class="rounded-lg shadow mt-3 mb-3 "src="https://res.cloudinary.com/dsq1kzjdy/image/upload/v1653922623/icons/images/Screenshot_2_yctk2z.png" alt="Empty list">
 
-    <h3>Add unlimited number of tasks, edit them or mark them as complete! </h3>
+    <h4 class="mb-5">Add unlimited number of tasks, edit them or mark them as complete! </h4>
 
-    <a href="{% url 'register' %}"><button class="mt-2 btn btn-success">Create your account</button></a> 
+    {% if user.is_authenticated %}
+    <div class="form-inline my-2 my-lg-0">
+      <h6 class="text-dark ">Hi {{user.username}}!</h6>
+       <a href="{% url 'logout' %}"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button></a> 
+    </div>
+     {% else %}
+     <h3 class="text-dark text-center ">Let's start</h3>
+     <h5 class="mb-5 text-center">If you have account you can login to your account <br> if you don't click to Register to create your account, It's free! </h5>
+       <a href="{% url 'register' %}"><button class="btn-lg btn-success my-2 my-sm-0 mx-2" type="submit">Register</button></a> 
+       <a href="{% url 'login' %}"><button class="btn-lg btn-info my-2 my-sm-0 mx-2" type="submit">Login</button></a> 
+     {% endif %}
+
 </div>
 {% endblock content %}
 
