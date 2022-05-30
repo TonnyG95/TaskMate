@@ -18,15 +18,18 @@
   {% endfor %}
 
   {% endif %}
-  
+
 
 {% block content %}
-<form method="POST" action="">
+<form method="POST">
 
     {% csrf_token %}
 
     {{ register_form.as_p }}
-<div class="btn btn-success">Register</div>
+
+
+<button class="btn btn-success" type="submit">Register</button>
+
 </form>
 
 {% endblock content %}
