@@ -77,56 +77,6 @@
           </tr>
           {% else %}
 
-          {% comment %} {% if obj.important %} 
-
-          <tr class="table-danger">
-          <td>{{ obj.task }}</th>
-            <td>
-
-              <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Select
-                </a>
-              
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="{% url 'pending_task' obj.id %}">Pending</a>
-                  <a class="dropdown-item" href="{% url 'complete_task' obj.id %}">Complate</a>
-                </div>
-              </div>
-
-            </td>
-          <td><h6>Important</h6></td>
-          <td><a href="{% url 'edit_task' obj.id %}">Edit</a></td>
-          <td><a href="{% url 'delete_task' obj.id %}">Delete</a></td>
-          </tr>
-          {% else %}
-          <tr>
-              <td>{{ obj.task }}</th>
-
-
-                <td>
-
-                  <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Select
-                    </a>
-                  
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="{% url 'pending_task' obj.id %}">Pending</a>
-                      <a class="dropdown-item" href="{% url 'complete_task' obj.id %}">Complate</a>
-                    </div>
-                  </div>
-    
-                </td>
-
-
-              <td><h6>Not Important</h6></td>
-              <td><a class="btn btn-primary" href="{% url 'edit_task' obj.id %}">Edit </a></td>
-              <td><a class="btn btn-danger" href="{% url 'delete_task' obj.id %}">Delete</a></td>
-          </tr>
-          {% endif %} {% endcomment %}
-
-
           <tr>
               <td>{{ obj.task }}</th>
 
