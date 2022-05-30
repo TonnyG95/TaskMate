@@ -2,22 +2,21 @@ from django.shortcuts import render, redirect
 from todo_app.models import TaskList
 from todo_app.forms import TaskForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
-
-# Create your views here.
-
-
+@login_required
 def todolist(request):
 
     if request.method == "POST":
         form = TaskForm(request.POST or None)
         if form.is_valid():
+            form.save(commit=False).owner = request.user
             form.save()
         messages.success(request, ("New task added!"))
         return redirect('todolist')
     else:
-        all_tasks = TaskList.objects.all()
+        all_tasks = TaskList.objects.filter(owner=request.user)
 
       
 
@@ -27,7 +26,11 @@ def todolist(request):
 
 def delete_task(request, task_id):
     task = TaskList.objects.get(pk=task_id)
-    task.delete()
+    if task.owner == request.user:
+        task.delete()
+    else:
+         messages.error(request, ("Sorry, you can't do that!"))
+        
     return redirect('todolist')
 
 
@@ -53,6 +56,7 @@ def contact(request):
 
 
 def edit_task(request, task_id):
+     
      if request.method == "POST":
         task = TaskList.objects.get(pk=task_id)
         form = TaskForm(request.POST or None, instance= task)
@@ -68,8 +72,11 @@ def edit_task(request, task_id):
 
 def complete_task(request, task_id):
     task = TaskList.objects.get(pk=task_id)
-    task.done = True 
-    task.save()
+    if task.owner == request.user:
+        task.done = True 
+        task.save()
+    else:
+         messages.error(request, ("Sorry but you can't do that!"))
     return redirect('todolist')
 
 
