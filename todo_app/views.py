@@ -38,6 +38,13 @@ def about(request):
     return render(request, 'todo_app/about.html', context)
 
 
+def index(request):
+    context = {
+        'index_text': 'Homepage',
+    }
+    return render(request, 'todo_app/index.html', context)
+
+
 def contact(request):
     context = {
         'contact_text': 'Contact us',
