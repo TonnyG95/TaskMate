@@ -1,5 +1,7 @@
 {% extends 'todo_app/base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% load static %}
 
 {% block title %} TaskMate | Register {% endblock title %}</title> 
@@ -25,10 +27,10 @@
 
     {% csrf_token %}
 
-    {{ register_form.as_p }}
+    {{ register_form|crispy }}
 
 
-<button class="btn btn-success" type="submit">Register</button>
+<button class="btn btn-success mt-2" type="submit">Register</button>
 
 </form>
 

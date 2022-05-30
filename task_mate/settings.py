@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'todo_app',
     'users_app',
+    'crispy_forms',
     
 ]
 
@@ -148,3 +149,5 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
