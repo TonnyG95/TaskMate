@@ -3,6 +3,8 @@ from todo_app.models import TaskList
 from todo_app.forms import TaskForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+import os
 
 
 @login_required
@@ -18,9 +20,6 @@ def todolist(request):
     else:
         all_tasks = TaskList.objects.filter(owner=request.user)
 
-      
-
-
         return render(request, 'todo_app/todo.html', {'all_tasks': all_tasks})
 
 
@@ -29,8 +28,8 @@ def delete_task(request, task_id):
     if task.owner == request.user:
         task.delete()
     else:
-         messages.error(request, ("Sorry, you can't do that!"))
-        
+        messages.error(request, ("Sorry, you can't do that!"))
+
     return redirect('todolist')
 
 
@@ -49,23 +48,30 @@ def index(request):
 
 
 def contact(request):
-    context = {
-        'contact_text': 'Contact us',
-    }
-    return render(request, 'todo_app/contact.html', context)
+
+    if request.method == 'POST':
+        contact_name = request.POST['contact_name']
+        contact_email = request.POST['contact_email']
+        contact_message = request.POST['contact_message']
+
+        send_mail('New message', 'contact_message', 'contact_email', [os.environ.get('EMAIL_HOST_USER')])
+
+        return render(request, 'todo_app/contact.html', {'contact_name': contact_name})
+    else:
+        return render(request, 'todo_app/contact.html', {})
 
 
 def edit_task(request, task_id):
-     
-     if request.method == "POST":
+
+    if request.method == "POST":
         task = TaskList.objects.get(pk=task_id)
-        form = TaskForm(request.POST or None, instance= task)
+        form = TaskForm(request.POST or None, instance=task)
         if form.is_valid():
             form.save()
 
         messages.success(request, ("Task Edited!"))
         return redirect('todolist')
-     else:
+    else:
         task_obj = TaskList.objects.get(pk=task_id)
         return render(request, 'todo_app/edit.html', {'task_obj': task_obj})
 
@@ -73,15 +79,15 @@ def edit_task(request, task_id):
 def complete_task(request, task_id):
     task = TaskList.objects.get(pk=task_id)
     if task.owner == request.user:
-        task.done = True 
+        task.done = True
         task.save()
     else:
-         messages.error(request, ("Sorry but you can't do that!"))
+        messages.error(request, ("Sorry but you can't do that!"))
     return redirect('todolist')
 
 
 def pending_task(request, task_id):
     task = TaskList.objects.get(pk=task_id)
-    task.done = False 
+    task.done = False
     task.save()
     return redirect('todolist')
