@@ -5,7 +5,79 @@
 {% block title %} TaskMate | About {% endblock title %}</title> 
 
 {% block content %}
-<h1>{{ about_text }}</h1>
+<div class="container text-center">
+    <h1 class="mb-5">About TaskMate</h1>
+    
+    <div class="row">
+    <div class="col">
+       <h5>What is TaskMate?</h5>
+        <p class="text-center">TaskMate is free,simple yet powerfull task manager app, add your tasks,edit them, mark them as complete ect </p> 
+       <p class="text-center">Create your account, add your task and keep track of your task with TaskMate!</p>
+       <p class="text-center">Start today</p>
+       {% if user.is_authenticated %}
+    <div class="form-inline my-2 my-lg-0">
+      <h6 class="text-dark ">Hi {{user.username}}!</h6>
+       <a href="{% url 'logout' %}"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button></a> 
+    </div>
+     {% else %}
+     <h3 class="text-dark text-center ">Let's start</h3>
+     <h5 class="mb-5 text-center">If you have account you can login to your account <br> if you don't click to Register to create your account, It's free! </h5>
+       <a href="{% url 'register' %}"><button class="btn-lg btn-success my-2 my-sm-0 mx-2" type="submit">Register</button></a> 
+       <a href="{% url 'login' %}"><button class="btn-lg btn-info my-2 my-sm-0 mx-2" type="submit">Login</button></a> 
+     {% endif %}
+    </div>
+
+    <div class="col">
+        <h5 class="task-center mb-3">Why try TaskMate?</h5>
+            <p class="task-center">Free and simple</p>
+            <p class="task-center">Unlimited task or accounts</p>
+            <p class="task-center">Full control over your task</p>
+            <p class="task-center">Secured</p>
+            <p class="task-center">Fun</p>
+    </div>
+
+    <div class="col">
+        <h5 class="task-center mb-3">Technical</h5>
+        <p class="task-center">TaskMate is build with Python and Django, that makes it secure,fast and relible. This is 1.0 version of TaskMate we will keep this service updated, add new features and ect, Stay in touch</p>
+
+        <!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:600px;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us10.list-manage.com/subscribe/post?u=d85de6a2559b6ea840c38876d&amp;id=4b1f181e88" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<h2>Subscribe</h2>
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear foot">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d85de6a2559b6ea840c38876d_4b1f181e88" tabindex="-1" value=""></div>
+        <div class="optionalParent">
+            <div class="clear foot">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                <p class="brandingLogo"><a href="http://eepurl.com/h3ke1X" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+            
+    </div>
+    
+    </div>
+</div>
 
 {% endblock content %}
 
