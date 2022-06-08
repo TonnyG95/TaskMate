@@ -2,3 +2,7 @@
     height: 150px;
     overflow-y: scroll;
 }
+
+.footer {
+    position: fixed;
+}

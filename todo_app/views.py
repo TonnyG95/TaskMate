@@ -91,3 +91,14 @@ def pending_task(request, task_id):
     task.done = False
     task.save()
     return redirect('todolist')
+
+def checkbox_done(request):
+    if request.method == 'POST':
+        task.update(done=False)
+        done = request.POST.get('task_obj.done')
+
+
+def checkbox_important(request):
+    if request.method == 'POST':
+        task.update(important=False)
+        important = request.POST.get('task_obj.important')

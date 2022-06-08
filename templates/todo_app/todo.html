@@ -39,7 +39,7 @@
           <tr>
             <th scope="col">Task</th>
             <th scope="col">Task Status</th>
-            <th scope="col">Priority</th>
+            <th scope="col">Important</th>
             <th scope="col">Edit</th>
             <th scope="col"> Delete</th>
           </tr>
@@ -71,7 +71,7 @@
               </div>
 
             </td>
-            <td><h6>Not Important</h6></td>
+            <td><h6>{{ obj.important }}</h6></td>
           <td><a href="{% url 'edit_task' obj.id %}">Edit</a></td>
           <td><a href="{% url 'delete_task' obj.id %}">Delete</a></td>
           </tr>
@@ -97,7 +97,7 @@
                 </td>
 
 
-                <td><h6>Not Important</h6></td>
+                <td><h6>{{ obj.important }}</h6></td>
               <td><a class="btn btn-primary" href="{% url 'edit_task' obj.id %}">Edit</a></td>
               <td><a class="btn btn-danger" href="{% url 'delete_task' obj.id %}">Delete</a></td>
           </tr>
@@ -137,18 +137,18 @@
 
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Add new task</label>
-      <input type="text" class="form-control" name="task" placeholder="What needs to be done today?">
+      <input type="text" class="form-control" name="task" placeholder="What needs to be done today?" required>
     </div>
 
     <div class="d-flex flex-row">
     <div class="mb-3 form-check mx-2">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label " for="exampleCheck1">Done</label>
+      <input type="checkbox" class="form-check-input" id="done" name="done" value="done">
+      <label class="form-check-label " for="done">Done</label>
     </div>
 
     <div class="mb-3 form-check mx-2">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label  " for="exampleCheck1">Important</label>
+      <input type="checkbox" class="form-check-input" id="important" name="important" value="important">
+      <label class="form-check-label " for="important">Important</label>
     </div>
 
   </div>

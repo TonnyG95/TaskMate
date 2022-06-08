@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'todo_app',
     'users_app',
     'crispy_forms',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -85,18 +85,16 @@ WSGI_APPLICATION = 'task_mate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 
 DATABASES = {
-   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
-
 
 
 # Password validation
@@ -166,6 +164,3 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
-
-
