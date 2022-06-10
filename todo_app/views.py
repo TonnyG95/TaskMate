@@ -4,6 +4,7 @@ from todo_app.forms import TaskForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
+from django.conf import settings
 import os
 
 
@@ -48,15 +49,14 @@ def index(request):
 
 
 def contact(request):
-
     if request.method == 'POST':
-        contact_name = request.POST['contact_name']
-        contact_email = request.POST['contact_email']
-        contact_message = request.POST['contact_message']
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
 
-        send_mail('New message', 'contact_message', 'contact_email', [os.environ.get('EMAIL_HOST_USER')])
+        send_mail('New message', 'message', 'email', ['tonnyg1995@gmail.com'])
 
-        return render(request, 'todo_app/contact.html', {'contact_name': contact_name})
+        return render(request, 'todo_app/contact.html', {'name': name})
     else:
         return render(request, 'todo_app/contact.html', {})
 
@@ -92,6 +92,7 @@ def pending_task(request, task_id):
     task.save()
     return redirect('todolist')
 
+
 def checkbox_done(request):
     if request.method == 'POST':
         task.update(done=False)
@@ -102,3 +103,4 @@ def checkbox_important(request):
     if request.method == 'POST':
         task.update(important=False)
         important = request.POST.get('task_obj.important')
+
