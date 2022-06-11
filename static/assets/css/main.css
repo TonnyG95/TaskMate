@@ -1,4 +1,86 @@
-.tasks-scrol {
-    height: 150px;
-    overflow-y: scroll;
+footer {
+    position: sticky;
+}
+
+#icon {
+    width: 30px;
+    cursor: pointer;
+    margin: 30px;
+}
+
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #212121;
+}
+
+
+.dark-theme {
+    --primary-color: #212121;
+    --secondary-color: #FFFFFF;
+}
+
+body {
+    background-color: var(--secondary-color);
+    height: 100vh;
+    width: 100vw;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color);
+}
+
+.text-light {
+    color: var(--primary-color);
+}
+
+a {
+    color: var(--primary-color);
+}
+
+label {
+    color: var(--primary-color);
+}
+
+input {
+    color: var(--primary-color);
+}
+
+.card-title {
+    color: var(--primary-color);
+}
+
+.card-text {
+    color: var(--primary-color);
+}
+
+.card-header {
+    color: var(--primary-color);
+}
+
+.card {
+    background-color: var(--secondary-color);
+}
+
+td {
+    color: var(--primary-color);
+}
+
+th {
+    color: var(--primary-color);
+}
+
+.indicates-required {
+    color: var(--primary-color);
+}
+
+
+footer p,
+h6 {
+    color: white !important;
 }
