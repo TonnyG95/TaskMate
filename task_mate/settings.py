@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ci-task-mate.herokuapp.com', 'localhost', 'https://ci2-taskmate.herokuapp.com']
+ALLOWED_HOSTS = ['ci-task-mate.herokuapp.com', 'localhost', 'ci2-taskmate.herokuapp.com']
 
 
 # Application definition
