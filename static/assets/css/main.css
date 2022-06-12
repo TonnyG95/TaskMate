@@ -1,5 +1,7 @@
 footer {
     position: sticky;
+    width: 99vw;
+    overflow: hidden;
 }
 
 #icon {
@@ -9,6 +11,11 @@ footer {
 }
 
 :root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #212121;
+}
+
+.light-theme {
     --primary-color: #FFFFFF;
     --secondary-color: #212121;
 }

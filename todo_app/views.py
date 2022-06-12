@@ -103,4 +103,3 @@ def checkbox_important(request):
     if request.method == 'POST':
         task.update(important=False)
         important = request.POST.get('task_obj.important')
-
