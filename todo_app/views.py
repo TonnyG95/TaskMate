@@ -7,7 +7,6 @@ from django.core.mail import send_mail
 from django.conf import settings
 import os
 
-
 @login_required
 def todolist(request):
 
@@ -50,13 +49,19 @@ def index(request):
 
 def contact(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message = request.POST['message']
 
-        send_mail('New message', 'message', 'email', ['tonnyg1995@gmail.com'])
+        send_mail(
+            'message from ' + message_name,  # subject
+            message,  # message
+            message_email,  # from email
+            ['tonnyg1995@gmail.com'],  # to email
+            fail_silently=False,
+        )
 
-        return render(request, 'todo_app/contact.html', {'name': name})
+        return render(request, 'todo_app/contact.html', {'message_name': message_name})
     else:
         return render(request, 'todo_app/contact.html', {})
 
