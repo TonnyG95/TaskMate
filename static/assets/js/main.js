@@ -24,9 +24,9 @@ setInterval(() => {
     }
 
     if (document.body.classList.contains("dark-theme")) {
-        icon.src = "https://res.cloudinary.com/dsq1kzjdy/image/upload/v1654969324/icons/sun_wbtzoy.png";
+        icon.src = "https://res.cloudinary.com/dsq1kzjdy/image/upload/v1654969324/icons/moon_dx4nyu.png";
 
     } else {
-        icon.src = "https://res.cloudinary.com/dsq1kzjdy/image/upload/v1654969324/icons/moon_dx4nyu.png";
+        icon.src = "https://res.cloudinary.com/dsq1kzjdy/image/upload/v1654969324/icons/sun_wbtzoy.png";
     }
 }, 5);
