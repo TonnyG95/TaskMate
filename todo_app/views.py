@@ -57,7 +57,7 @@ def contact(request):
             'message from ' + message_name,  # subject
             message,  # message
             message_email,  # from email
-            ['tonnyg1995@gmail.com'],  # to email
+            [os.environ.get('EMAIL_HOST_USER')],  # to email
             fail_silently=False,
         )
 
