@@ -41,10 +41,6 @@ h6 {
     color: var(--primary-color);
 }
 
-.text-light {
-    color: var(--primary-color);
-}
-
 a {
     color: var(--primary-color);
 }
@@ -77,6 +73,10 @@ td {
     color: var(--primary-color);
 }
 
+td>h6 {
+    color: var(--primary-color);
+}
+
 th {
     color: var(--primary-color);
 }
@@ -85,8 +85,14 @@ th {
     color: var(--primary-color);
 }
 
+.footer_h6 {
+    color: white;
+}
 
-footer p,
-h6 {
-    color: white !important;
+.footer_p {
+    color: white;
+}
+
+.footer_login {
+    color: white;
 }

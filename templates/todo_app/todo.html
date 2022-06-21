@@ -42,6 +42,7 @@
             <th scope="col">Important</th>
             <th scope="col">Edit</th>
             <th scope="col"> Delete</th>
+            
           </tr>
         </thead>
 
@@ -78,7 +79,7 @@
           {% else %}
 
           <tr>
-              <td>{{ obj.task }}</th>
+              <td><h5>{{ obj.task }} </h5><p class="created text-muted"> Added: {{obj.created|date:'d.m.Y'}} <br> Updated: {{obj.updated|date:'d.m.Y'}} </p></th> 
 
 
                 <td>

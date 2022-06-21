@@ -7,6 +7,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 import os
 
+
 @login_required
 def todolist(request):
 
@@ -23,6 +24,7 @@ def todolist(request):
         return render(request, 'todo_app/todo.html', {'all_tasks': all_tasks})
 
 
+@login_required
 def delete_task(request, task_id):
     task = TaskList.objects.get(pk=task_id)
     if task.owner == request.user:
@@ -66,6 +68,7 @@ def contact(request):
         return render(request, 'todo_app/contact.html', {})
 
 
+@login_required
 def edit_task(request, task_id):
 
     if request.method == "POST":
@@ -81,6 +84,7 @@ def edit_task(request, task_id):
         return render(request, 'todo_app/edit.html', {'task_obj': task_obj})
 
 
+@login_required
 def complete_task(request, task_id):
     task = TaskList.objects.get(pk=task_id)
     if task.owner == request.user:
@@ -91,6 +95,7 @@ def complete_task(request, task_id):
     return redirect('todolist')
 
 
+@login_required
 def pending_task(request, task_id):
     task = TaskList.objects.get(pk=task_id)
     task.done = False
@@ -98,12 +103,14 @@ def pending_task(request, task_id):
     return redirect('todolist')
 
 
+@login_required
 def checkbox_done(request):
     if request.method == 'POST':
         task.update(done=False)
         done = request.POST.get('task_obj.done')
 
 
+@login_required
 def checkbox_important(request):
     if request.method == 'POST':
         task.update(important=False)
