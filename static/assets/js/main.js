@@ -9,9 +9,9 @@ function darkmode() {
         console.log("Light mode");
         theme = "LIGHT";
     }
-    // save to localStorage
+
     localStorage.setItem("PageTheme", JSON.stringify(theme));
-    // ensure you convert to JSON like i have done -----JSON.stringify(theme)
+
 }
 
 setInterval(() => {

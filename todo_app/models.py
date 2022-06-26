@@ -11,4 +11,5 @@ class TaskList(models.Model):
     updated = models.DateField(auto_now=True, null=True, blank=True)
 
     def __str__(self):
-        return self.task + " | " + "Done: " + str(self.done) + " | " + " important: " + str(self.important)
+        return self.task + " | " + "Done: " + str(self.done)
+        + " | " + " important: " + str(self.important)

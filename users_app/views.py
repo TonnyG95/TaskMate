@@ -14,4 +14,5 @@ def register(request):
             return redirect('todolist')
     else:
         register_form = CustomRegisterForm()
-    return render(request, 'todo_app/register.html', {'register_form': register_form})
+    return render(request, 'todo_app/register.html',
+                  {'register_form': register_form})

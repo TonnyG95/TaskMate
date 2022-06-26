@@ -4,7 +4,6 @@ from todo_app.forms import TaskForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
-from django.conf import settings
 import os
 
 
@@ -63,7 +62,8 @@ def contact(request):
             fail_silently=False,
         )
 
-        return render(request, 'todo_app/contact.html', {'message_name': message_name})
+        return render(request, 'todo_app/contact.html',
+                      {'message_name': message_name})
     else:
         return render(request, 'todo_app/contact.html', {})
 

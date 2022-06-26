@@ -1,159 +1,85 @@
-{% extends 'todo_app/base.html' %}
-
-{% load static %}
-
-{% block title %} TaskMate | Home {% endblock title %}</title> 
-
-{% block content %}
-
+{% extends 'todo_app/base.html' %} {% load static %} {% block title %} TaskMate | Home {% endblock title %}</title> {% block content %}
 <div class="container">
-
-  <!--Messages-->
-
- {% if messages %}
-
-  {% for message in messages %}
-
-  <div class="alert alert-info alert-dismissible fade show" role="alert">
-    <strong>Saved!</strong> {{message}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-
-  {% endfor %}
-
-  {% endif %}
-
-  <!--End Messages-->
-
-
-  <!--Task List Heading -->
-
-    <h1 class="text-center m-4 text-muted">Today's tasks</h1>
-
-    {% if all_tasks %}
-
-    <table class="table table-bordered text-center">
-        <thead class="thead-dark"> 
-          <tr>
-            <th scope="col">Task</th>
-            <th scope="col">Task Status</th>
-            <th scope="col">Important</th>
-            <th scope="col">Edit</th>
-            <th scope="col"> Delete</th>
-            
-          </tr>
-        </thead>
-
-
-         <!--Task List -->
-    <tbody>
-
-  
-
-      {% for obj in all_tasks %}
-
-          {% if obj.done %}
-
-          <tr class="table-success">
-          <td><del>{{ obj.task }}</del></th>
-            <td>
-
-              <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<!--Messages-->{% if messages %} {% for message in messages %}
+	<div class="alert alert-info alert-dismissible fade show" role="alert"> <strong>Saved!</strong> {{message}}
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+	</div> {% endfor %} {% endif %}
+	<!--End Messages-->
+	<!--Task List Heading -->
+	<h1 class="text-center m-4 text-muted">Today's tasks</h1> {% if all_tasks %}
+	<table class="table table-bordered text-center">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">Task</th>
+				<th scope="col">Task Status</th>
+				<th scope="col">Important</th>
+				<th scope="col">Edit</th>
+				<th scope="col"> Delete</th>
+			</tr>
+		</thead>
+		<!--Task List -->
+		<tbody> {% for obj in all_tasks %} {% if obj.done %}
+			<tr class="table-success">
+				<td><del>{{ obj.task }}</del></th>
+					<td>
+						<div class="dropdown show"> <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Select
                 </a>
-              
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="{% url 'pending_task' obj.id %}">Pending</a>
-                  <a class="dropdown-item" href="{% url 'complete_task' obj.id %}">Complate</a>
-                </div>
-              </div>
-
-            </td>
-            <td><h6>{{ obj.important }}</h6></td>
-          <td><a href="{% url 'edit_task' obj.id %}">Edit</a></td>
-          <td><a href="{% url 'delete_task' obj.id %}">Delete</a></td>
-          </tr>
-          {% else %}
-
-          <tr>
-              <td><h5>{{ obj.task }} </h5><p class="created text-muted"> Added: {{obj.created|date:'d.m.Y'}} <br> Updated: {{obj.updated|date:'d.m.Y'}} </p></th> 
-
-
-                <td>
-
-                  <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> <a class="dropdown-item" href="{% url 'pending_task' obj.id %}">Pending</a> <a class="dropdown-item" href="{% url 'complete_task' obj.id %}">Completed</a> </div>
+						</div>
+					</td>
+					<td>
+						<h6>{{ obj.important }}</h6></td>
+					<td><a href="{% url 'edit_task' obj.id %}">Edit</a></td>
+					<td><a href="{% url 'delete_task' obj.id %}">Delete</a></td>
+			</tr> {% else %}
+			<tr>
+				<td>
+					<h5>{{ obj.task }} </h5>
+					<p class="created text-muted"> Added: {{obj.created|date:'d.m.Y'}}
+						<br> Updated: {{obj.updated|date:'d.m.Y'}} </p>
+					</th>
+					<td>
+						<div class="dropdown show"> <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Select
                     </a>
-                  
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="{% url 'pending_task' obj.id %}">Pending</a>
-                      <a class="dropdown-item" href="{% url 'complete_task' obj.id %}">Complate</a>
-                    </div>
-                  </div>
-    
-                </td>
-
-
-                <td><h6>{{ obj.important }}</h6></td>
-              <td><a class="btn btn-primary" href="{% url 'edit_task' obj.id %}">Edit</a></td>
-              <td><a class="btn btn-danger" href="{% url 'delete_task' obj.id %}">Delete</a></td>
-          </tr>
-          {% endif %}
-
-         
-          
-      {% endfor %}
-    {% else %}
-
-    <div class="container">
-      <div class="card">
-        <h5 class="card-header">No Tasks!</h5>
-        <div class="card-body">
-          <h5 class="card-title">You dont have any task for today</h5>
-          <p class="card-text">Add some</p>
-
-        </div>
-      </div>
-    </div>
-  {% endif %}
-  </tbody>
-</table>
-    <br>
-    
-</div>
-
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> <a class="dropdown-item" href="{% url 'pending_task' obj.id %}">Pending</a> <a class="dropdown-item" href="{% url 'complete_task' obj.id %}">Completed</a> </div>
+						</div>
+					</td>
+					<td>
+						<h6>{{ obj.important }}</h6></td>
+					<td><a class="btn btn-primary" href="{% url 'edit_task' obj.id %}">Edit</a></td>
+					<td><a class="btn btn-danger" href="{% url 'delete_task' obj.id %}">Delete</a></td>
+			</tr> {% endif %} {% endfor %} {% else %}
+			<div class="container">
+				<div class="card">
+					<h5 class="card-header">No Tasks!</h5>
+					<div class="card-body">
+						<h5 class="card-title">You dont have any task for today</h5>
+						<p class="card-text">Add some</p>
+					</div>
+				</div>
+			</div> {% endif %} </tbody>
+	</table>
+	<br> </div>
 <br>
-
 <!--End Task List-->
-
 <!--Input Form-->
-
-<form method="POST">
-
-  {% csrf_token %}
-
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Add new task</label>
-      <input type="text" class="form-control" name="task" placeholder="What needs to be done today?" required>
-    </div>
-
-    <div class="d-flex flex-row">
-    <div class="mb-3 form-check mx-2">
-      <input type="checkbox" class="form-check-input" id="done" name="done" value="done">
-      <label class="form-check-label " for="done">Done</label>
-    </div>
-
-    <div class="mb-3 form-check mx-2">
-      <input type="checkbox" class="form-check-input" id="important" name="important" value="important">
-      <label class="form-check-label " for="important">Important</label>
-    </div>
-
-  </div>
-    <button type="submit" class="btn btn-warning">Add Task <span><i class="fa-solid fa-circle-plus"></i></button>
+<form method="POST"> {% csrf_token %}
+	<div class="mb-3">
+		<label for="exampleInputEmail1" class="form-label">Add new task</label>
+		<input type="text" class="form-control" name="task" placeholder="What needs to be done today?" required> </div>
+	<div class="d-flex flex-row">
+		<div class="mb-3 form-check mx-2">
+			<input type="checkbox" class="form-check-input" id="done" name="done" value="done">
+			<label class="form-check-label " for="done">Done</label>
+		</div>
+		<div class="mb-3 form-check mx-2">
+			<input type="checkbox" class="form-check-input" id="important" name="important" value="important">
+			<label class="form-check-label " for="important">Important</label>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-warning">Add Task <span><i class="fa-solid fa-circle-plus"></i></button>
   </form>
 
 
