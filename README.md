@@ -172,19 +172,19 @@ The [W3C Markup Validator](https://validator.w3.org/) service was used to valida
     - No significant errors.
     Files Tested
 
-     task_mate/settings.py (AUTH_PASSWORD_VALIDATORS line too long)
-     task_mate/urls.py (No errors)
-     todo_app/admin.py (No errors)
-     todo_app/forms.py (No errors)
-     todo_app/models.py (No errors)
-     todo_app/urls.py (No errors)
-     users_app/views.py (No errors)
-     users_app/urls.py (No errors)
-     users_app/forms.py (No errors)
+     task_mate/settings.py (AUTH_PASSWORD_VALIDATORS line too long) \
+     task_mate/urls.py (No errors) \
+     todo_app/admin.py (No errors) \
+     todo_app/forms.py (No errors) \
+     todo_app/models.py (No errors) \
+     todo_app/urls.py (No errors) \
+     users_app/views.py (No errors) \
+     users_app/urls.py (No errors) \
+     users_app/forms.py (No errors) 
 
 ### Browser Validation
-Chrome
-Edge
+Chrome \
+Edge \
 Firefox
 
 ### User testing
