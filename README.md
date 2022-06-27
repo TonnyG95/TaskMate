@@ -200,8 +200,9 @@ The [W3C Markup Validator](https://validator.w3.org/) service was used to valida
 
 3. Python Files - Code Validation
     - No significant errors. \
-    Files Tested
-
+    
+    
+    Files Tested:
      task_mate/settings.py (AUTH_PASSWORD_VALIDATORS line too long) \
      task_mate/urls.py (No errors) \
      todo_app/admin.py (No errors) \
