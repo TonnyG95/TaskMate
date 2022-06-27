@@ -28,7 +28,7 @@ A deployed website can be found [Here](https://ci-task-mate.herokuapp.com/).
     - [Froking](#forking-the-repository)
     - [Cloning](#creating-a-clone)
 6. [Credits](#credits)
-    -[Links](#links)
+    - [Links](#links)
     - [Acknowledgements](#acknowledgements)
     
 
