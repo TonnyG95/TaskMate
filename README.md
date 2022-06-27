@@ -337,3 +337,5 @@ During this project, I got a new mentor Harry Dhillon. I want to thank him for a
 
 ### Disclaimer
 This project was create for educational purposes only, and credits for all pictures/icons used in this project go to their respective owners.
+
+[Back to top](#table-of-contents)
