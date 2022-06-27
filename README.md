@@ -2,7 +2,7 @@
 ![taskm8](https://user-images.githubusercontent.com/47572512/174821264-173b3e05-5664-4f6b-98c9-45585cd85bff.png)
 
 
-![Screenshot_2_yctk2z](https://user-images.githubusercontent.com/47572512/174827801-8d72e86b-fd8d-405b-9821-5e1394dfebe3.png)
+![screely-1656345440540](https://user-images.githubusercontent.com/47572512/175982648-26600eaf-5b4c-462b-8e6a-598cbefff269.png)
 
 A deployed website can be found [Here](https://ci-task-mate.herokuapp.com/).
 
@@ -25,11 +25,12 @@ A deployed website can be found [Here](https://ci-task-mate.herokuapp.com/).
     - [User Testing](#user-testing)
 5. [Deployment](#deployment)
     - [Heroku Deployment](#deployment)
-    - [Froking](#forking-the-repository)
+    - [Forking](#forking-the-repository)
     - [Cloning](#creating-a-clone)
 6. [Credits](#credits)
     - [Links](#links)
     - [Acknowledgements](#acknowledgements)
+    - [Disclaimer](#disclaimer)
     
 
 
@@ -62,7 +63,6 @@ The plan with TaskMate was to create a simple,user-intuitive to-do app that is n
 
 - Asgiref
 - Cloudinary
-- Cloudinary
 - Crispy Forms
 - Gunicorn
 - Psycopg
@@ -91,6 +91,7 @@ This project will keep receiving security and features updates. It will be in ac
 - Contact form
 - Help desk (zendesk type app)
 - React version
+- infinite scroll
 
 [Back to top](#table-of-contents)
 
@@ -273,7 +274,7 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
     - templates
 10. Create a file named "Procfile" in the main directory and add the following:
     - web: gunicorn project-name.wsgi
-11. Go to the Deploy tab on Heroku and connect to GitHub, then to the required repository. Click on Deploy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku and enable automatic deployments.
+11. Go to the Deploy tab on Heroku and connect to GitHub, then to the required repository. Click on Deploy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku and automatic deployments can be enabled.
 
 [Back to top](#table-of-contents)
 
@@ -315,5 +316,21 @@ How to run this project within a local IDE, such as VSCode:
 # Credits
 
 ### Links
+- [Whitenoise](http://whitenoise.evans.io/en/stable/index.html) Radically simplified static file serving for Python web apps
+- [Sqlparse](https://github.com/andialbrecht/sqlparse) sqlparse is a non-validating SQL parser for Python
+- [Pytz](https://pythonhosted.org/pytz/) World Timezone Definitions for Python
+- [Psycopg](https://www.psycopg.org/) Psycopg is the most popular PostgreSQL adapter for the Python
+- [Gunicorn](https://docs.gunicorn.org/en/latest/index.html) Gunicorn ('Green Unicorn') is a pure-Python WSGI server for UNIX
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/index.html) New better way of organizing forms in django
+- [Cloudinary](https://cloudinary.com/) Used for hosting static files
+- [Asgiref](https://asgi.readthedocs.io/en/latest/) ASGI is a spiritual successor to WSGI
+- [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) World’s most popular framework for building responsive, mobile-first sites
+- [Django](https://www.djangoproject.com/) High-level Python web framework that encourages rapid development
+- [Font Awsome](https://fontawesome.com/) Used for social icons
+- [Screely](https://www.screely.com/) Used for creating website screenshot
 
 ### Acknowledgements
+
+During this project, I got a new mentor Harry Dhillon. I want to thank him for all tips and tricks that helped me improve this project and I want to thank him for all time he spent answering my questions. I want to thank my former mentor Antonija Simic as well for helping me to even get to this project in the first place she was amazing and I learn a lot from her. Hopefully, she will be back to mentoring soon because she is a really great mentor
+
+### Disclaimer
