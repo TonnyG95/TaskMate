@@ -233,69 +233,72 @@ My mom was using TaskMate on daily as shopping list app and everything worked as
 
 To deploy this page to Heroku from its GitHub repository, the following steps were taken:
 
-Create the Heroku App:
+1. Create the Heroku App:
 
-Select "Create new app" in Heroku.
-Choose a name for your app and select the location.
-Attach the Postgres database:
+2. Select "Create new app" in Heroku.
+3. Choose a name for your app and select the location.
+4. Attach the Postgres database
 
-In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option.
-Prepare the environment and settings.py file:
+5. In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option.
+6. Prepare the environment and settings.py
 
-In the Settings tab, click on Reveal Config Vars and copy the url next to DATABASE_URL.
-In your GitPod workspace, create an env.py file in the main directory.
-Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
-Add the SECRET_KEY value to the Config Vars in Heroku.
-Update the settings.py file to import the env file and add the SECRETKEY and DATABASE_URL file paths.
-Update the Config Vars with the Cloudinary url, adding into the settings.py file also.
-In settings.py add the following sections:
-Cloudinary to the INSTALLED_APPS list
-STATICFILE_STORAGE
-STATICFILES_DIRS
-STATIC_ROOT
-MEDIA_URL
-DEFAULT_FILE_STORAGE
-TEMPLATES_DIR
-Update DIRS in TEMPLATES with TEMPLATES_DIR
-Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
-Store Static and Media files in Cloudinary and Deploy to Heroku:
+7. In the Settings tab, click on Reveal Config Vars and copy the url next to DATABASE_URL.
+8. In your GitPod workspace, create an env.py file in the main directory.
+    - Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
+    - Add the SECRET_KEY value to the Config Vars in Heroku.
+    - Update the settings.py file to import the env file and add the SECRETKEY and DATABASE_URL file paths.
+    - Update the Config Vars with the Cloudinary url, adding into the settings.py file also.
+    - In settings.py add the following sections
+    - Cloudinary to the INSTALLED_APPS list
+    - STATICFILE_STORAGE
+    - STATICFILES_DIRS
+    - STATIC_ROOT
+    - MEDIA_URL
+    - DEFAULT_FILE_STORAGE
+    - TEMPLATES_DIR
+    - Update DIRS in TEMPLATES with TEMPLATES_DIR
+    - Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+    - Store Static and Media files in Cloudinary and Deploy to Heroku:
 
-Create three directories in the main directory; media, storage and templates.
-Create a file named "Procfile" in the main directory and add the following:
-web: gunicorn project-name.wsgi
-Go to the Deploy tab on Heroku and connect to GitHub, then to the required repository. Click on Deploy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku and enable automatic deployments.
+9. Create three directories in the main directory
+    - media 
+    - storage
+    - templates
+10. Create a file named "Procfile" in the main directory and add the following:
+    - web: gunicorn project-name.wsgi
+11. Go to the Deploy tab on Heroku and connect to GitHub, then to the required repository. Click on Deploy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku and enable automatic deployments.
 
 
 # Forking the Repository
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
-Log into GitHub or create an account.
-Locate the GitHub Repository.
-At the top of the repository, on the right side of the page, select "Fork"
-You should now have a copy of the original repository in your GitHub account.
+1. Log into GitHub or create an account.
+2. Locate the GitHub Repository.
+3. At the top of the repository, on the right side of the page, select "Fork"
+4. You should now have a copy of the original repository in your GitHub account.
 
 # Creating a Clone
 
 ow to run this project locally:
 
-Install the GitPod Browser [extension.](https://www.gitpod.io/docs/browser-extension/)
-After installation, restart the browser.
-Log into GitHub or create an account.
-Locate the GitHub Repository.
-Click the green "GitPod" button in the top right corner of the repository. This will trigger a new gitPod workspace to be created from the code in github where you can work locally.
+1. Install the GitPod Browser [extension.](https://www.gitpod.io/docs/browser-extension/)
+2. After installation, restart the browser.
+3. Log into GitHub or create an account.
+4. Locate the GitHub Repository.
+5. Click the green "GitPod" button in the top right corner of the repository. This will trigger a new gitPod workspace to be created from the code in github where you can work locally.
 How to run this project within a local IDE, such as VSCode:
 
-Log into [GitHub](https://github.com/).
-Locate the [GitHub Repository.](https://github.com/TonnyG95/task-mate).
-Under the repository name, click "Clone or download".
-In the Clone with HTTPs section, copy the clone URL for the repository.
-In your local IDE open the terminal.
-Change the current working directory to the location where you want the cloned directory to be made.
-Type 'git clone', and then paste the URL you copied in Step 3.
-git clone https://github.com/USERNAME/REPOSITORY
-Press Enter. Your local clone will be created.
-Further reading and troubleshooting on cloning a repository from GitHub here
+6. Log into [GitHub](https://github.com/).
+7. Locate the [GitHub Repository.](https://github.com/TonnyG95/task-mate).
+8. Under the repository name, click "Clone or download".
+9. In the Clone with HTTPs section, copy the clone URL for the repository.
+10. In your local IDE open the terminal.
+11. Change the current working directory to the location where you want the cloned directory to be made.
+12. Type 'git clone', and then paste the URL you copied in Step 3.
+13. git clone https://github.com/USERNAME/REPOSITORY
+14. Press Enter. Your local clone will be created.
+15. Further reading and troubleshooting on cloning a repository from GitHub here
 
 # Credits
 
