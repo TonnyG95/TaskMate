@@ -327,9 +327,9 @@ How to run this project within a local IDE, such as VSCode:
 - [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) World’s most popular framework for building responsive, mobile-first sites
 - [Django](https://www.djangoproject.com/) High-level Python web framework that encourages rapid development
 - [Font Awsome](https://fontawesome.com/) Used for social icons
-- [Screely](https://www.screely.com/) Used for creating website screenshot
+- [Screely](https://www.screely.com/) Used to create website screenshot
 - [web.dev](https://web.dev/) Used to test pages in a lab environment powered by PageSpeed Insights.
-- [GTMetrix](https://gtmetrix.com/) Used to test how my page performs. 
+- [GTMetrix](https://gtmetrix.com/) Used to test how my page performs
 
 ### Acknowledgements
 
