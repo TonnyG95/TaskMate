@@ -10,7 +10,7 @@ A deployed website can be found [Here](https://ci-task-mate.herokuapp.com/).
 
 1. [Introduction](#introduction)
     - [What is TaskMate](#what-is-taskmate)
-    - [Idea behind project](#what-is-the-idea-behind-this-project)
+    - [Idea Behind Project](#what-is-the-idea-behind-this-project)
     - [Technologies](#technologies)
 2. [Features](#features)
     - [Included Features](#included-features)
