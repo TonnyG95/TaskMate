@@ -196,7 +196,7 @@ The [W3C Markup Validator](https://validator.w3.org/) service was used to valida
     - No errors
     
 3. JavaScript Testing
-    - No errors \
+    - No errors 
     
 
 3. Python Files - Code Validation
