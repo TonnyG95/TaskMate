@@ -328,9 +328,12 @@ How to run this project within a local IDE, such as VSCode:
 - [Django](https://www.djangoproject.com/) High-level Python web framework that encourages rapid development
 - [Font Awsome](https://fontawesome.com/) Used for social icons
 - [Screely](https://www.screely.com/) Used for creating website screenshot
+- [web.dev](https://web.dev/) Used to test pages in a lab environment powered by PageSpeed Insights.
+- [GTMetrix](https://gtmetrix.com/) Used to test how my page performs. 
 
 ### Acknowledgements
 
 During this project, I got a new mentor Harry Dhillon. I want to thank him for all tips and tricks that helped me improve this project and I want to thank him for all time he spent answering my questions. I want to thank my former mentor Antonija Simic as well for helping me to even get to this project in the first place she was amazing and I learn a lot from her. Hopefully, she will be back to mentoring soon because she is a really great mentor
 
 ### Disclaimer
+This project was create for educational purposes only, and credits for all pictures/icons used in this project go to their respective owners.
