@@ -19,7 +19,7 @@ A deployed website can be found [Here](https://ci-task-mate.herokuapp.com/).
     - [UI](#ui)
     - [UX](#ux)
 4. [Testing](#testing)
-    - [User Story](#user-stories-1)
+    - [User Story](#testing-user-stories)
     - [Manual Testing](#manual-testing)
     - [Automated Testing](#automated-testing)
     - [User Testing](#user-testing)
@@ -42,6 +42,7 @@ TaskMate is a free, simple yet powerful task manager app. Add your tasks, edit t
 ### What is the idea behind this project?
 The plan with TaskMate was to create a simple,user-intuitive to-do app that is not overwhelmed, users. An excellent choice for people who want to log in to the website, add their tasks, and continue their day.
 
+[Back to top](#table-of-contents)
 
 # Technologies 
 
@@ -69,7 +70,7 @@ The plan with TaskMate was to create a simple,user-intuitive to-do app that is n
 - Sqlparse
 - Whitenoise
 
-
+[Back to top](#table-of-contents)
 # Features
 
 ### Included Features
@@ -91,6 +92,7 @@ This project will keep receiving security and features updates. It will be in ac
 - Help desk (zendesk type app)
 - React version
 
+[Back to top](#table-of-contents)
 
 # UI | UX 
 
@@ -127,11 +129,11 @@ Font: Robboto
 
 The main goal of this project is to help users organize a day, and it is important to keep it as simple as possible so users can easily navigate without much trouble. Therefore the information architecture of this site is straightforward: a landing page where users get information about the service, a registration page where users can create an account, login page where users can log in and start adding tasks. 
 
+[Back to top](#table-of-contents)
+
 # Testing
 
-## Testing User Stories
-
-### User Stories 
+### Testing User Stories 
 
 1. As a site User, I was able to create my account. 
     - by clicking on registration I was prompted to fill out a username, e-mail and password fields after I fill out the required information my account was created.    
@@ -215,6 +217,7 @@ Chrome \
 Edge \
 Firefox
 
+
 ### Performance and UX
 
 ![Screenshot_1](https://user-images.githubusercontent.com/47572512/175964259-38002711-e4b2-4671-bfb0-85b3159f9b06.png) 
@@ -228,6 +231,8 @@ Test with [GTMetrix](https://gtmetrix.com/). gave me those results
 ### User testing
 My mom was using TaskMate on daily as shopping list app and everything worked as intended.
 
+
+[Back to top](#table-of-contents)
 
 # Deployment
 
@@ -268,6 +273,7 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
     - web: gunicorn project-name.wsgi
 11. Go to the Deploy tab on Heroku and connect to GitHub, then to the required repository. Click on Deploy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku and enable automatic deployments.
 
+[Back to top](#table-of-contents)
 
 # Forking the Repository
 
@@ -277,6 +283,8 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 2. Locate the GitHub Repository.
 3. At the top of the repository, on the right side of the page, select "Fork"
 4. You should now have a copy of the original repository in your GitHub account.
+
+[Back to top](#table-of-contents)
 
 # Creating a Clone
 
@@ -299,6 +307,8 @@ How to run this project within a local IDE, such as VSCode:
 13. git clone https://github.com/USERNAME/REPOSITORY
 14. Press Enter. Your local clone will be created.
 15. Further reading and troubleshooting on cloning a repository from GitHub here
+
+[Back to top](#table-of-contents)
 
 # Credits
 
