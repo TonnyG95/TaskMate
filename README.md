@@ -105,9 +105,7 @@ The app is designed with Figma. The project can be found [Here](https://www.figm
 
 #### Assets
 
-Header and Footer color: #212529\
-Logo: #00a9ec\
-Font: Robboto
+Colors used for this project
 
 ![colors](https://user-images.githubusercontent.com/47572512/174842767-fa16dcf7-678b-4448-a393-3b289d39e9e2.png)
 
