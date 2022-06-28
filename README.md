@@ -80,6 +80,7 @@ The plan with TaskMate was to create a simple,user-intuitive to-do app that is n
 - Full CRUD Functionality 
 - Login and Registration 
 - Newsletter subscription powered by MailChimp
+- Contact form
 
 
 ### Future Implementations
@@ -87,7 +88,6 @@ The plan with TaskMate was to create a simple,user-intuitive to-do app that is n
 This project will keep receiving security and features updates. It will be in active development. The project's current state has all the basic functionalities needed for a user to track tasks. The site owner also has access to all the data through Django's default admin panel. The next phase will be adding more features to the site, enhancing user experience and control over the app. The following features are planned to be implemented:
 
 - A better-designed admin dashboard for a site owner to manage the app and its data
-- Contact form
 - Help desk (zendesk type app)
 - React version
 - infinite scroll
