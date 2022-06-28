@@ -20,9 +20,8 @@ A deployed website can be found [Here](https://ci-task-mate.herokuapp.com/).
     - [UX](#ux)
 4. [Testing](#testing)
     - [User Story](#testing-user-stories)
-    - [Manual Testing](#manual-testing)
+    - [Manual Validation](#manual-validation)
     - [Automated Testing](#automated-testing)
-    - [User Testing](#user-testing)
 5. [Deployment](#deployment)
     - [Heroku Deployment](#deployment)
     - [Forking](#forking-the-repository)
@@ -153,7 +152,7 @@ The main goal of this project is to help users organize a day, and it is importa
 8. As a site Admin, i can manage content on my website.
     - While logged in on admin panel i can see list of tasks, check who is owner of this task and i can manage them.
 
-## Manual Testing
+## Manual Validation
 
 ### Common Testing
 
@@ -231,8 +230,6 @@ Test with [web.dev](https://web.dev/). gave me those results
 Test with [GTMetrix](https://gtmetrix.com/). gave me those results 
 
 
-### User testing
-My mom was using TaskMate on daily as shopping list app and everything worked as intended.
 
 
 [Back to top](#table-of-contents)
@@ -330,6 +327,7 @@ How to run this project within a local IDE, such as VSCode:
 - [Screely](https://www.screely.com/) Used to create website screenshot
 - [web.dev](https://web.dev/) Used to test pages in a lab environment powered by PageSpeed Insights.
 - [GTMetrix](https://gtmetrix.com/) Used to test how my page performs
+- [Mailchimp](https://mailchimp.com/en-gb/) Used for newsletter subscription 
 
 ### Acknowledgements
 
